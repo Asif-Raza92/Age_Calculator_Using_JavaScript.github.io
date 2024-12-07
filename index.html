@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator with Sprinkle Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+            <div class="sprinkle"></div>
+        </div>
+
+        <div class="Calculator">
+            <h1>JavaScript<br><span>Age Calculator App</span></h1>
+            <div class="input-box">
+                <input type="date" id="date">
+                <button onclick="CalculateAge()">Calculate</button>
+            </div>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        let userInput = document.getElementById("date");
+        userInput.max = new Date().toISOString().split("T")[0];
+        let result = document.getElementById("result");
+
+        function CalculateAge() {
+            let birthDate = new Date(userInput.value);
+            let today = new Date();
+
+            let Y1 = birthDate.getFullYear();
+            let M1 = birthDate.getMonth();
+            let D1 = birthDate.getDate();
+
+            let Y2 = today.getFullYear();
+            let M2 = today.getMonth();
+            let D2 = today.getDate();
+
+            let Y3 = Y2 - Y1;
+            let M3 = M2 - M1;
+            let D3 = D2 - D1;
+
+            if (D3 < 0) {
+                M3--;
+                D3 += new Date(Y2, M2, 0).getDate();
+            }
+
+            if (M3 < 0) {
+                Y3--;
+                M3 += 12;
+            }
+
+            result.innerHTML = `You are <span>${Y3}</span> years, <span>${M3}</span> months, and <span>${D3}</span> days old.`;
+        }
+    </script>
+</body>
+</html>
