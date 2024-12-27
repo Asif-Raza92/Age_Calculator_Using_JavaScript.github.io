@@ -3,7 +3,7 @@
 README: JavaScript Age Calculator
 Project Title: JavaScript Age Calculator
 A simple, responsive age calculator that calculates a person's age in years, months, and days based on their date of birth. It is built with HTML, CSS, and JavaScript to provide an interactive and visually appealing user experience.
-
+Disclaimer : This project is made with the help of Tutorial and I add some features and changed its User interface also take help of Ai to solve only error in projects.
 Features:
 Date Picker: Users can select their birthdate using a calendar input.
 Accurate Age Calculation: Calculates years, months, and days accurately based on the current date.
